@@ -1,0 +1,136 @@
+\documentclass[oldfontcommands]{ucbthesis}
+\input{packages.tex}
+\newif\ifarticle \articlefalse
+% Double spacing, if you want it.
+% \def\dsp{\def\baselinestretch{2.0}\large\normalsize}
+% \dsp
+
+% If the Grad. Division insists that the first paragraph of a section
+% be indented (like the others), then include this line:
+% \usepackage{indentfirst}
+
+%%%%%%%%%%%%%%%%%%
+% If you want to use "sections" to partition your thesis
+% un-comment the following:
+% 
+% \counterwithout{section}{chapter}
+% \setsecnumdepth{subsubsection}
+% \def\sectionmark#1{\markboth{#1}{#1}}
+% \def\subsectionmark#1{\markboth{#1}{#1}}
+% \renewcommand{\thesection}{\arabic{section}}
+% \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+% \makeatletter
+% \let\l@subsection\l@section
+% \let\l@section\l@chapter
+% \makeatother
+% 
+% \renewcommand{\thetable}{\arabic{table}}
+% \renewcommand{\thefigure}{\arabic{figure}}
+%
+%%%%%%%%%%%%%%%%%%
+
+%%\newtheorem{theorem}{Gibberish}
+%%\hyphenation{mar-gin-al-ia}
+
+\begin{document}
+
+% Declarations for Front Matter
+
+\title{Example Dissertation Using Modular LaTeX}
+\author{Eric Munsing}
+\degreesemester{Summer}
+\degreeyear{2018}
+\degree{Doctor of Philosophy}
+\chair{Assistant Professor Scott J. Moura}
+\othermembers{Professor Art Rosenfeld\\
+	Professor Richard Feynman}
+\numberofmembers{3}
+\prevdegrees{B.S.M.E. (Franklin W. Olin College of Engineering) 2008 \\
+  M.S. (University of California at Berkeley) 2014}
+\field{Engineering - Civil and Environmental Engineering}
+\campus{Berkeley}
+
+\maketitle
+
+%\approvalpage
+% ^^ comment this out when compiling your final draft
+
+\copyrightpage
+
+\begin{abstract}
+	\input{chapters/introduction.tex}
+\end{abstract}
+
+\begin{frontmatter}
+
+\begin{dedication}
+\null\vfil
+\begin{center}
+To @ShitAcademicsSay\\\vspace{12pt}
+For keeping me sane in the midst of the impossible
+\end{center}
+\vfil\null
+\end{dedication}
+
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+
+\begin{acknowledgements}
+\input{chapters/acknowledgements.tex}
+\end{acknowledgements}
+
+\end{frontmatter}
+
+\pagestyle{headings}
+
+% (Optional) \part{First Part}
+
+%% NOTE: In general I am using Git to sync individual articles to a local folder. In each of the articles, I am using the content.tex file to hold all the content (except the abstract).
+%% The \makeatletter..\makeatother block assigns the local path for that context to look in the specific folder for that chapter, in order to not have to re-assign the graphics and input files.
+
+\chapter{Background and Motivation}\label{chap:background}
+%\input{chapters/background_Intro.tex}
+%\makeatletter
+%\def\input@path{{chapters/background/}}
+%\def\Ginput@path{{chapters/background/}}
+%\makeatother
+%\input{content.tex}
+%\section{Potential Improvements}
+%\input{chapters/background_Conclusion.tex}
+
+\chapter{Blockchain-Coordinated Decentralized Optimization}\label{chap:blockchains}
+%\input{chapters/blockchains_Intro.tex}
+%\makeatletter
+%\def\input@path{{chapters/GreatLocationStorage/}}
+%\def\Ginput@path{{chapters/GreatLocationStorage/}}
+%\makeatother
+%\input{content.tex}
+%\section{Potential Improvements}
+%\input{chapters/blockchains_Conclusion.tex}
+
+
+\chapter{Conclusion}\label{chap:conclusion}
+\input{chapters/conclusion.tex}
+
+
+%%% BIBLIOGRAPHY %%%%%
+%\bibliographystyle{ieeetr}
+%\bibliography{chapters/storagesizing/APEN_2016_08_02.bib,chapters/blockchains/blockchain.bib}
+
+%%---------------
+
+%\appendix
+%\chapter{Decentralized Security- Analytic Solution}
+%\makeatletter
+%\def\input@path{{chapters/blockchains/}}
+%\def\Ginput@path{{chapters/blockchains/}}
+%\makeatother
+%\input{appendix_decentSecurity_Analytic.tex}
+
+%%---------------
+
+
+\end{document}

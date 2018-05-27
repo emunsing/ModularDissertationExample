@@ -1,0 +1,12 @@
+*/.git/
+*.aux
+*.bbl
+*.blg
+*.lof
+*.log
+*.lot
+*.out
+*.synctex.gz
+*.toc
+.DS_Store
+~$*
