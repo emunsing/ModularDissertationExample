@@ -1,0 +1,58 @@
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf} 
+%\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4 paper
+
+\IEEEoverridecommandlockouts                              % This command is only needed if you want to use the \thanks command
+
+\overrideIEEEmargins                                      % Needed to meet printer requirements.
+
+\usepackage{lipsum}
+\usepackage{csquotes}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{algorithm2e}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{environ}
+%\usepackage{caption}
+%\captionsetup[algorithm]{font=footnotesize}
+\usepackage{array,booktabs,amsmath,amssymb,amsfonts,textgreek,graphicx,fancyvrb,tabularx, xcolor, soul}
+\usepackage{mathtools}
+\SetAlCapSkip{1em}
+% \usepackage[tt=false]{libertine}
+% \usepackage[varqu]{zi4}
+% \usepackage[libertine]{newtxmath}
+% \usepackage[tableposition=top]{caption}
+% \usepackage{hypdoc}
+\newif\ifarticle \articletrue
+
+\title{\LARGE \bf
+Modular Articles for Quicker Graduations*
+}
+
+
+\author{Eric Munsing$^{1}$% <-this % stops a space
+\thanks{*The work was supported by the National Science Foundation Graduate Research Fellowship under Grant No. 1106400}% <-this % stops a space
+\thanks{$^{1}$Eric Munsing is with the Department of Civil and Environmental Engineering, University of California at Berkeley, USA {\tt\small e.munsing@berkeley.edu}}%
+}
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+\lipsum[7-8]
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{content.tex}
+
+\bibliographystyle{ieeetr}
+\bibliography{blockchain} 
+
+\appendix
+\input{appendix_decentSecurity_Analytic.tex}
+
+
+\end{document}

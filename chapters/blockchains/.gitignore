@@ -1,0 +1,10 @@
+*.gz
+*.aux
+*.blg
+*.bbl
+*.log
+.DS_Store
+~$*
+
+
+

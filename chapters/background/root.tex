@@ -1,0 +1,79 @@
+\documentclass[review]{elsarticle}
+%\documentclass[preprint]{elsarticle}
+\journal{Applied Energy}
+
+\usepackage{lineno,hyperref}
+\usepackage{lipsum}
+\usepackage{longtable}
+\usepackage{amssymb, amsmath, textgreek}
+%\modulolinenumbers[5]
+
+%% Numbered
+%\bibliographystyle{model1-num-names}
+
+%% Numbered without titles
+%\bibliographystyle{model1a-num-names}
+
+%% Harvard
+%\bibliographystyle{model2-names.bst}\biboptions{authoryear}
+
+%% Vancouver numbered
+%\usepackage{numcompress}\bibliographystyle{model3-num-names}
+
+%% Vancouver name/year
+%\usepackage{numcompress}\bibliographystyle{model4-names}\biboptions{authoryear}
+
+%% APA style
+%\bibliographystyle{model5-names}\biboptions{authoryear}
+
+%% AMA style
+%\usepackage{numcompress}\bibliographystyle{model6-num-names}
+
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+
+
+%%%%%%%%%%%%%%%%%%%%
+%%% TO-DO ITEMS %%%%
+% - MSC categories?
+% - Review categories
+
+
+\begin{document}
+\begin{frontmatter}
+
+\title{Demonstrating the value of Modular Latex for Writing a Dissertation}
+
+%% Group authors per affiliation:
+\author[ecal]{Eric Munsing\corref{cor1}}
+\ead{e.munsing@berkeley.edu}
+
+%% or include affiliations in footnotes:
+\cortext[cor1]{Corresponding author}
+
+\address[ecal]{Energy, Controls, and Applications Laboratory, University of California at Berkeley, Berkeley CA, USA}
+
+
+\begin{abstract}
+\lipsum[2]
+\end{abstract}
+
+\begin{keyword}
+Energy Storage\sep Energy Markets\sep Renewable Energy \sep Batteries \sep Optimization \sep Mathematical Programming
+% \MSC[2010] 00-01\sep  99-00
+\end{keyword}
+
+\end{frontmatter}
+
+\linenumbers
+
+\input{content.tex}
+
+\section{Acknowledgments}
+This work was supported by the National Science Foundation [Award EECS-1408107].
+
+\section*{References}
+
+\bibliography{APEN_2016_08_02.bib}
+
+\end{document}

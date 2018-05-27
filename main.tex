@@ -92,24 +92,26 @@ For keeping me sane in the midst of the impossible
 %% The \makeatletter..\makeatother block assigns the local path for that context to look in the specific folder for that chapter, in order to not have to re-assign the graphics and input files.
 
 \chapter{Background and Motivation}\label{chap:background}
-%\input{chapters/background_Intro.tex}
-%\makeatletter
-%\def\input@path{{chapters/background/}}
-%\def\Ginput@path{{chapters/background/}}
-%\makeatother
-%\input{content.tex}
-%\section{Potential Improvements}
-%\input{chapters/background_Conclusion.tex}
+\input{chapters/background_Intro.tex}
+\makeatletter
+\def\input@path{{chapters/background/}}
+\def\Ginput@path{{chapters/background/}}
+\makeatother
+\input{content.tex}
+\section{Potential Improvements}
+\input{chapters/background_Conclusion.tex}
+
+%%---------------
 
 \chapter{Blockchain-Coordinated Decentralized Optimization}\label{chap:blockchains}
-%\input{chapters/blockchains_Intro.tex}
-%\makeatletter
-%\def\input@path{{chapters/GreatLocationStorage/}}
-%\def\Ginput@path{{chapters/GreatLocationStorage/}}
-%\makeatother
-%\input{content.tex}
-%\section{Potential Improvements}
-%\input{chapters/blockchains_Conclusion.tex}
+\input{chapters/blockchains_Intro.tex}
+\makeatletter
+\def\input@path{{chapters/blockchains/}}
+\def\Ginput@path{{chapters/blockchains/}}
+\makeatother
+\input{content.tex}
+\section{Potential Improvements}
+\input{chapters/blockchains_Conclusion.tex}
 
 
 \chapter{Conclusion}\label{chap:conclusion}
@@ -117,18 +119,20 @@ For keeping me sane in the midst of the impossible
 
 
 %%% BIBLIOGRAPHY %%%%%
-%\bibliographystyle{ieeetr}
-%\bibliography{chapters/storagesizing/APEN_2016_08_02.bib,chapters/blockchains/blockchain.bib}
+\bibliographystyle{ieeetr}
+\bibliography{chapters/background/APEN_2016_08_02.bib,chapters/blockchains/blockchain.bib}
+
+
+%%%%%%% APPENDICES - SAME TREATMENT AS ABOVE %%%%%%%%%%
+\appendix
 
 %%---------------
-
-%\appendix
-%\chapter{Decentralized Security- Analytic Solution}
-%\makeatletter
-%\def\input@path{{chapters/blockchains/}}
-%\def\Ginput@path{{chapters/blockchains/}}
-%\makeatother
-%\input{appendix_decentSecurity_Analytic.tex}
+\chapter{Decentralized Security- Analytic Solution}
+\makeatletter
+\def\input@path{{chapters/blockchains/}}
+\def\Ginput@path{{chapters/blockchains/}}
+\makeatother
+\input{appendix_decentSecurity_Analytic.tex}
 
 %%---------------
 

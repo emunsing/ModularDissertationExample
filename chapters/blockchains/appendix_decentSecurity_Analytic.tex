@@ -1,0 +1,44 @@
+\section{Analytic Solution Notes}\label{sec:appendix_analyticSolution}
+
+The x-update step is an unconstrained quadratic program, and can be solved analytically. For clarity, we let $\gamma = Bz^k + u^k$ and proceed as:
+\begin{align*}
+x^{k+1} &= \text{argmin}_x \quad x^T P x + c^T x + \frac{\rho}{2}||Ax+\gamma||^2_2 \\
+x^{k+1} &= \text{argmin}_x \quad x^T P x + c^T x + \frac{\rho}{2}(Ax+\gamma)^T (Ax+\gamma)\\
+x^{k+1} &= \text{argmin}_x \quad x^T P x + c^T x + \frac{\rho}{2}(x^T A^T Ax + 2 \gamma^T Ax + \gamma^T \gamma)\\
+0 &= \frac{\partial}{\partial x} \left( x^T P x + c^T x + \frac{\rho}{2}(x^T A^T Ax + 2 \gamma^T Ax + \gamma^T \gamma) \right)\\
+0 &= 2 P x + c + \rho A^T A x + \rho \gamma^T A\\
+0 &= (2P + \rho A^T A)x + c + \rho \gamma^T A \\
+x &= (2P + \rho A^T A)^{-1}(-c - \rho \gamma^T A)
+\end{align*}
+
+Similarly, the z-update step can be solved analytically by letting $\mu=Ax^{k+1} - c + u^k$ and following a similar process to find:
+$$
+z^{k+1} = (2Q + \rho B^T B)^{-1} (-d - \rho \mu^T B)
+$$
+
+These analytic solutions are used in our implementation to avoid inaccuracies induced from a numeric solution.
+
+\subsection{Comparison with Central Solution}
+Because the problem is an unconstrained QP and entries with consensus between a subset of variables, a centralized solution can be computed by composing the cost matrices into a single quadratic problem which can be solved analytically.  This is shown here for the case where $c=0$ and $A$ and $B$ are composed as described above, but also can be computed for other $A,B$.
+
+We break P and Q into sub-matrices dependent on the number of consensus constraints $p$, where $P_{11}, Q_{00} \in \mathbb{R}^{p \times p}$ and the other dimensions follow accordingly.
+
+\begin{align*}
+P &= \left[ \begin{array}{cc} P_{00} & P_{01}\\P_{10} & P_{11} \\ \end{array} \right]\\
+Q &= \left[ \begin{array}{cc} Q_{00} & Q_{01}\\Q_{10} & Q_{11}\end{array} \right]\\
+\Pi &= \left[ \begin{array}{ccc}  P_{00} & P_{01} & 0 \\ P_{10} & P_{11}+Q_{00} & Q_{10} \\
+0 & Q_{10} & Q_{11} \end{array} \right]
+\end{align*}
+
+Similarly, the $c$ and $d$ vectors can be combined as 
+$$
+\kappa = \left[ \begin{array}{c} c_0 \\ c_1 + d_0 \\ d_1 \end{array} \right]
+$$
+
+The problem can then be expressed as an unconstrained minimization problem:
+$$
+\text{min}_w \quad w^T \Pi w + \kappa^T w
+$$
+which is solved by $w^* = -\frac{1}{2}(\Pi^T) ^{-1} \kappa$
+
+This central solution was used only for verification.
